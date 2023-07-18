@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CorsInterceptor } from 'src/interceptors/cors.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastsContainer } from 'src/components/toasts-container.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ToastsContainer
   ],
   providers: [
     {

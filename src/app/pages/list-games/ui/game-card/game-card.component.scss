@@ -1,0 +1,51 @@
+:host {
+  width: 100%;
+  height: 300px;
+  min-width: 18rem;
+  max-width: 18rem;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.card-text {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.image-skeleton {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.title-skeleton {
+  height: 1.5rem;
+}
+
+.description-skeleton {
+  height: 1rem;
+}
+
+@keyframes loading-skeleton {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.loading-skeleton {
+  color: transparent;
+  appearance: none;
+  background-color: #eee;
+  border-color: #eee;
+  pointer-events: none;
+  animation: loading-skeleton 1s infinite alternate;
+}

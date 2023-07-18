@@ -1,0 +1,28 @@
+<div [formGroup]="form" class="container pt-5">
+  <div class="d-flex flex-wrap align-items-center justify-content-center row row-cols-auto g-4">
+    <div class="col">
+      <div class="input-group">
+        <input #search type="text" class="form-control" placeholder="Search by name" formControlName="name" />
+        <button class="btn btn-outline-secondary" type="button" (click)="form.get('name')?.reset('')">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    </div>
+    <div class="col">
+      <select class="form-select" formControlName="genre">
+        <option value="">Select genre</option>
+        <option *ngFor="let genre of genres$ | async" [value]="genre">
+          {{ genre }}
+        </option>
+      </select>
+    </div>
+    <div class="col">
+      <select class="form-select" formControlName="platform">
+        <option value="">Select platform</option>
+        <option *ngFor="let platform of platforms$ | async" [value]="platform">
+          {{ platform }}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>

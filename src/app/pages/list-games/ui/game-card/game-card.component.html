@@ -1,0 +1,16 @@
+<ng-container *ngIf="game; else loadingTemplate">
+  <img [src]="game.thumbnail" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-truncate" [title]="game.title">{{ game.title }}</h5>
+    <p class="card-text" [title]="game.short_description">{{ game.short_description }}</p>
+  </div>
+</ng-container>
+<ng-template #loadingTemplate>
+  <div class="card-img-top loading-skeleton image-skeleton"></div>
+  <div class="card-body">
+    <div class="loading-skeleton title-skeleton w-100 mt-1 rounded"></div>
+    <div class="loading-skeleton description-skeleton w-100 mt-2 rounded"></div>
+    <div class="loading-skeleton description-skeleton w-100 mt-1 rounded"></div>
+    <div class="loading-skeleton description-skeleton w-100 mt-1 rounded"></div>
+  </div>
+</ng-template>

@@ -1,0 +1,11 @@
+<div class="container pt-5">
+  <app-game-filters class="d-flex mb-5"></app-game-filters>
+
+  <div class="d-flex flex-wrap align-items-center justify-content-center row row-cols-auto g-4">
+    <div class="col" *ngFor="let game of games$ | async">
+      <a [routerLink]="['detail', game?.id]">
+        <app-game-card [game]="game"></app-game-card>
+      </a>
+    </div>
+  </div>
+</div>
