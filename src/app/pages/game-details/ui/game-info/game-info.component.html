@@ -1,0 +1,102 @@
+<div class="row mt-5" *ngIf="game; else loadingTemplate">
+  <div class="col-md-8">
+    <h3>About {{ game.title }}</h3>
+    <p>{{ game.description }}</p>
+
+    <p>Publisher: <b>{{ game.publisher }}</b></p>
+    <p>Developer: <b>{{ game.developer }}</b></p>
+    <p>Release Date: <b>{{ game.release_date | date : 'fullDate' }}</b></p>
+  </div>
+  <div class="col-md-4">
+    <h3>System Requirements</h3>
+    <table class="table table-striped w-auto mt-4">
+      <tbody>
+        <tr>
+          <th>OS</th>
+          <td>{{ game.minimum_system_requirements.os }}</td>
+        </tr>
+        <tr>
+          <th>Processor</th>
+          <td>{{ game.minimum_system_requirements.processor }}</td>
+        </tr>
+        <tr>
+          <th>Memory</th>
+          <td>{{ game.minimum_system_requirements.memory }}</td>
+        </tr>
+        <tr>
+          <th>Graphics</th>
+          <td>{{ game.minimum_system_requirements.graphics }}</td>
+        </tr>
+        <tr>
+          <th>Storage</th>
+          <td>{{ game.minimum_system_requirements.storage }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #loadingTemplate>
+  <div class="row mt-5">
+    <div class="col-md-8">
+      <h3 class="loading-skeleton w-50">About</h3>
+      <br>
+      <p class="loading-skeleton">Description</p>
+      <p class="loading-skeleton">Description</p>
+      <p class="loading-skeleton">Description</p>
+      <p class="loading-skeleton">Description</p>
+      <p class="loading-skeleton w-75">Description</p>
+      <br>
+      <p class="loading-skeleton w-50">Publisher</p>
+      <p class="loading-skeleton w-50">Developer</p>
+      <p class="loading-skeleton w-50">Release Date</p>
+    </div>
+    <div class="col-md-4">
+      <h3>System Requirements</h3>
+      <table class="table table-striped w-auto mt-4">
+        <tbody>
+          <tr>
+            <th>
+              <div class="loading-skeleton" style="width: 40px;">spec</div>
+            </th>
+            <td>
+              <div class="loading-skeleton" style="width: 200px;">spec</div>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <div class="loading-skeleton" style="width: 80px;">spec</div>
+            </th>
+            <td>
+              <div class="loading-skeleton" style="width: 200px;">spec</div>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <div class="loading-skeleton" style="width: 80px;">spec</div>
+            </th>
+            <td>
+              <div class="loading-skeleton" style="width: 200px;">spec</div>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <div class="loading-skeleton" style="width: 80px;">spec</div>
+            </th>
+            <td>
+              <div class="loading-skeleton" style="width: 200px;">spec</div>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <div class="loading-skeleton" style="width: 80px;">spec</div>
+            </th>
+            <td>
+              <div class="loading-skeleton" style="width: 200px;">spec</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-template>

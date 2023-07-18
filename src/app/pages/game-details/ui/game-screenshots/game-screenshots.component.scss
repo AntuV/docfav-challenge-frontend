@@ -1,0 +1,29 @@
+app-game-screenshots {
+
+  ngb-carousel img,
+  .loading-skeleton {
+    height: 200px;
+    min-width: auto;
+
+    @media (min-width: 768px) {
+      height: 400px;
+    }
+
+    @media (min-width: 992px) {
+      height: 600px;
+    }
+  }
+
+  .loading-skeleton {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .carousel-item {
+    text-align: center;
+
+    img {
+      cursor: pointer;
+    }
+  }
+}

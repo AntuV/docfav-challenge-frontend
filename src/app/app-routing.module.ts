@@ -4,7 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/list-games/list-games.module').then(m => m.ListGamesModule)
+    loadChildren: () => import('./pages/games-list/games-list.module').then(m => m.GamesListModule)
+  },
+  {
+    path: 'game/:id',
+    loadChildren: () => import('./pages/game-details/game-details.module').then(m => m.GameDetailsModule)
   },
   {
     path: '**',
@@ -13,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

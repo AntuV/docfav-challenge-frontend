@@ -1,24 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Observable, startWith } from 'rxjs';
 import { FTGApiService } from 'src/services/ftg-api.service';
 import { ToastService } from 'src/services/toast.service';
 import { Game } from 'src/types/game.interface';
 
 @Component({
-  selector: 'app-list-games',
-  templateUrl: './list-games.component.html',
-  styleUrls: ['./list-games.component.scss']
+  selector: 'app-games-list',
+  templateUrl: './games-list.component.html',
+  styleUrls: ['./games-list.component.scss']
 })
-export class ListGamesComponent implements OnInit {
+export class GamesListComponent implements OnInit {
 
   games$?: Observable<Game[]>;
 
   constructor(
     private api: FTGApiService,
-    private toast: ToastService
+    private toast: ToastService,
+    private title: Title
   ) { }
 
   async ngOnInit(): Promise<void> {
+    this.title.setTitle('FreeToGame');
 
     this.games$ = this.api.filteredGames$.pipe(
       startWith(Array(30).fill(null))

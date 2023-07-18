@@ -11,3 +11,22 @@ body {
 a {
   text-decoration: none;
 }
+
+.loading-skeleton {
+  color: transparent;
+  appearance: none;
+  background-color: #eee;
+  border-color: #eee;
+  pointer-events: none;
+  animation: loading-skeleton 1s infinite alternate;
+}
+
+@keyframes loading-skeleton {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

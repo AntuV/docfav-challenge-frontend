@@ -1,0 +1,9 @@
+<ngb-carousel *ngIf="screenshots; else loadingTemplate">
+  <ng-template ngbSlide *ngFor="let screenshot of screenshots, let i = index">
+    <img [src]="screenshot.image" [alt]="'Screenshot-' + screenshot.id" (click)="open(i)" />
+  </ng-template>
+</ngb-carousel>
+
+<ng-template #loadingTemplate>
+  <div class="loading-skeleton"></div>
+</ng-template>

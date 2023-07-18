@@ -30,22 +30,3 @@
 .description-skeleton {
   height: 1rem;
 }
-
-@keyframes loading-skeleton {
-  from {
-    opacity: .4;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.loading-skeleton {
-  color: transparent;
-  appearance: none;
-  background-color: #eee;
-  border-color: #eee;
-  pointer-events: none;
-  animation: loading-skeleton 1s infinite alternate;
-}

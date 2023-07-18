@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ListGamesComponent } from './list-games.component';
+import { GamesListComponent } from './games-list.component';
 import { GameCardComponent } from './ui/game-card/game-card.component';
 import { GameFiltersComponent } from './ui/game-filters/game-filters.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,12 +9,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: '',
-    component: ListGamesComponent
+    component: GamesListComponent
   }
 ];
 
 @NgModule({
-  declarations: [ListGamesComponent, GameCardComponent, GameFiltersComponent],
+  declarations: [GamesListComponent, GameCardComponent, GameFiltersComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -23,4 +23,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class ListGamesModule { }
+export class GamesListModule { }

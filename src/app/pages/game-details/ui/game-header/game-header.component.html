@@ -1,0 +1,62 @@
+<div class="row" *ngIf="game; else loadingTemplate">
+
+  <div class="col-md-4 pt-2">
+    <img src="{{ game.thumbnail }}" alt="{{ game.title }}" class="img-fluid shadow mb-3 mb-md-0" />
+  </div>
+
+  <div class="col-md-8">
+
+    <h1 class="mb-2">{{ game.title }}</h1>
+
+    <div class="mb-2">
+      <span class="badge text-bg-primary m-1">{{ game.genre }}</span>
+      <span class="badge text-bg-dark m-1">{{ game.platform }}</span>
+    </div>
+
+    <div class="mt-5">
+      <a href="{{ game.game_url }}" target="_blank" class="btn btn-primary">
+        <i class="bi bi-play-fill"></i>
+        Play Now
+      </a>
+    </div>
+
+    <div class="mt-2">
+      <a href="{{ game.freetogame_profile_url }}" target="_blank" class="btn btn-outline-secondary">View on
+        FreeToGame.com</a>
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #loadingTemplate>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="shadow loading-image loading-skeleton"></div>
+    </div>
+
+    <div class="col-md-8">
+
+      <h1 class="mb-2 loading-skeleton rounded w-50">Title</h1>
+
+      <div class="mb-2">
+        <span class="badge loading-badge loading-skeleton m-1 rounded">Genre</span>
+        <span class="badge loading-badge loading-skeleton m-1 rounded">Platform</span>
+      </div>
+
+      <div class="mt-5">
+        <div class="loading-skeleton loading-button" style="width: 120px;">
+          <i class="bi bi-play-fill"></i>
+          Play Now
+        </div>
+      </div>
+
+      <div class="mt-2">
+        <div class="loading-skeleton loading-button" style="width: 240px;">
+          View on FreeToGame.com
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-template>
