@@ -1,5 +1,5 @@
 <div class="row mt-5" *ngIf="game; else loadingTemplate">
-  <div class="col-md-8">
+  <div class="col" [class.col-md-8]="!!game.minimum_system_requirements">
     <h3 id="about">About {{ game.title }}</h3>
     <p id="description">{{ game.description }}</p>
 
@@ -7,7 +7,7 @@
     <p id="developer">Developer: <b>{{ game.developer }}</b></p>
     <p id="release-date">Release Date: <b>{{ game.release_date | date : 'fullDate' }}</b></p>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4" *ngIf="game.minimum_system_requirements">
     <h3 id="requirements">System Requirements</h3>
     <table class="table table-striped w-auto mt-4">
       <tbody>
