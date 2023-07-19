@@ -34,9 +34,4 @@ export class GamesListComponent implements OnInit {
       this.toast.showDanger('No se pudo obtener el listado de juegos');
     }
   }
-
-  async getGames() {
-    
-  }
-
 }

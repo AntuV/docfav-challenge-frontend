@@ -23,15 +23,22 @@ export class GameDetailsComponent implements OnInit {
   ) { }
 
   async ngOnInit(): Promise<void> {
+    await this.getGameDetails(); 
+    this.setGameTitle();
+  }
+  
+  async getGameDetails() {
     const id: string = this.route.snapshot.paramMap.get('id')!;
-
     try {
       this.game = await this.api.getGameDetails(parseInt(id));
-      this.title.setTitle(`${this.game.title} - FreeToGame`);
     } catch (err) {
       console.error(err);
       this.toast.showDanger('No se pudieron obtener los detalles del juego');
       this.router.navigate(['/']);
     }
+  }
+
+  setGameTitle() {
+    this.title.setTitle(`${this.game?.title} - FreeToGame`);
   }
 }

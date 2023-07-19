@@ -15,7 +15,7 @@ import { GameFilters } from 'src/types/game-filters.interface';
 export class FTGApiService {
   baseUrl: string = environment.apiUrl;
 
-  private games: Game[] = [];
+  games: Game[] = [];
 
   games$ = new Subject<Game[]>();
   filteredGames$ = new Subject<Game[]>();

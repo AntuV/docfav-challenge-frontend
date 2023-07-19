@@ -14,7 +14,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GamesListComponent, GameCardComponent, GameFiltersComponent],
+  declarations: [
+    GamesListComponent,
+    GameCardComponent,
+    GameFiltersComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

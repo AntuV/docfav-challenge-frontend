@@ -1,14 +1,14 @@
 <div class="row mt-5" *ngIf="game; else loadingTemplate">
   <div class="col-md-8">
-    <h3>About {{ game.title }}</h3>
-    <p>{{ game.description }}</p>
+    <h3 id="about">About {{ game.title }}</h3>
+    <p id="description">{{ game.description }}</p>
 
-    <p>Publisher: <b>{{ game.publisher }}</b></p>
-    <p>Developer: <b>{{ game.developer }}</b></p>
-    <p>Release Date: <b>{{ game.release_date | date : 'fullDate' }}</b></p>
+    <p id="publisher">Publisher: <b>{{ game.publisher }}</b></p>
+    <p id="developer">Developer: <b>{{ game.developer }}</b></p>
+    <p id="release-date">Release Date: <b>{{ game.release_date | date : 'fullDate' }}</b></p>
   </div>
   <div class="col-md-4">
-    <h3>System Requirements</h3>
+    <h3 id="requirements">System Requirements</h3>
     <table class="table table-striped w-auto mt-4">
       <tbody>
         <tr>
