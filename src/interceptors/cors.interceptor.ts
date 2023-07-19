@@ -3,11 +3,11 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse
 import { Observable, catchError, throwError } from 'rxjs';
 
 /**
- * Interceptor para forzar el uso de CORS en peticiones HTTP.
+ * Interceptor to force the use of CORS in HTTP requests.
  * 
- * Si la petición HTTP falla con un error 403, se redirige al usuario a la página de CORS Anywhere para
- * solicitar autorización.
- */  
+ * If the HTTP request fails with a 403 error, the user is redirected to the CORS Anywhere page
+ * to request authorization.
+ */
 @Injectable()
 export class CorsInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

@@ -7,7 +7,7 @@ import { GameDetail } from 'src/types/game-detail.interface';
 import { GameFilters } from 'src/types/game-filters.interface';
 
 /**
- * Servicio para obtención de datos de la API de [FreeToGame](https://www.freetogame.com/api-doc)
+ * Service to obtain data from [FreeToGame API](https://www.freetogame.com/api-doc)
  */
 @Injectable({
   providedIn: 'root'
